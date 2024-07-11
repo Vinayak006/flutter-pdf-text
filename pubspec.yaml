@@ -3,9 +3,14 @@ description: This plugin for Flutter allows you to read the text content of PDF 
 version: 0.5.0
 homepage: https://github.com/AlessioLuciani/flutter-pdf-text/tree/master
 
+# package="dev.aluc.pdf_text
+# rootProject.name = 'pdf_text'
+# group 'dev.aluc.pdf_text'
+# version '1.0-SNAPSHOT'
+
 environment:
-  sdk: '>=3.4.3 <4.0.0'
-  flutter: ">=3.4.3"
+  sdk: '>=2.17.0 <4.0.0'
+  # flutter: ">=3.4.3"
 
 dependencies:
   flutter:
