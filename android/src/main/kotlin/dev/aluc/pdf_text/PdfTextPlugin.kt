@@ -4,14 +4,14 @@ package dev.aluc.pdf_text
 import android.os.Handler
 import android.os.Looper
 import androidx.annotation.NonNull
+import com.tom_roush.pdfbox.android.PDFBoxResourceLoader
 import com.tom_roush.pdfbox.pdmodel.PDDocument
 import com.tom_roush.pdfbox.text.PDFTextStripper
-import com.tom_roush.pdfbox.util.PDFBoxResourceLoader
 import io.flutter.embedding.engine.plugins.FlutterPlugin
+import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
-import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 import java.io.File
 import kotlin.concurrent.thread
@@ -139,7 +139,7 @@ class PdfTextPlugin: FlutterPlugin, MethodCallHandler {
       val stripper = PDFTextStripper();
       stripper.startPage = pageNumber
       stripper.endPage = pageNumber
-      val text = stripper.getText(doc)
+      val text : String = stripper.getText(doc)
       doc.close()
       Handler(Looper.getMainLooper()).post {
         result.success(text)
